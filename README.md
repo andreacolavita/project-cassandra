@@ -19,7 +19,7 @@ Starting from the CVS files available in the ```event_data``` we are creating a 
 
 The image below is a screenshot of how the denormalized dataset looks like:
 
-![Denormalized dataset]("/images/image_event_datafile_new.jpg")
+![Denormalized dataset](/images/image_event_datafile_new.jpg)
 
 
 ## Schema design and ETL pipeline
