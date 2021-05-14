@@ -11,11 +11,11 @@ music_app_songs_table_drop = "DROP TABLE IF EXISTS music_app_songs"
 ## sessionId = 338, and itemInSession = 4
 music_app_history_table_create = ("""
 CREATE TABLE IF NOT EXISTS music_app_history (
+                            session_id int, 
+                            itemInSession int, 
                             artist varchar, 
                             song varchar, 
                             length float, 
-                            session_id int, 
-                            itemInSession int, 
                             PRIMARY KEY ((session_id), itemInSession))
 """)
 
@@ -23,27 +23,27 @@ CREATE TABLE IF NOT EXISTS music_app_history (
 ## for userid = 10, sessionid = 182
 music_app_users_table_create = ("""
 CREATE TABLE IF NOT EXISTS music_app_users (
+                            user_id int, 
+                            session_id int, 
+                            itemInSession int, 
                             artist varchar, 
                             song varchar, 
                             firstname varchar, 
-                            lastname varchar, 
-                            session_id int, 
-                            itemInSession int, 
-                            user_id int, 
-                            PRIMARY KEY ((user_id), session_id, itemInSession))
+                            lastname varchar,
+                            PRIMARY KEY ((user_id, session_id), itemInSession))
 """)
 
 ## Query 3: Give me every user name (first and last) in my music app history who listened to the song 
 ## 'All Hands Against His Own'
 music_app_songs_table_create = ("""
 CREATE TABLE IF NOT EXISTS music_app_songs (
+                            song varchar, 
+                            user_id int, 
                             firstname varchar, 
                             lastname varchar, 
                             session_id int, 
                             itemInSession int, 
-                            user_id int, 
-                            song varchar, 
-                            PRIMARY KEY ((song), session_id, itemInSession))
+                            PRIMARY KEY (song, userId))
 """)
 
 
